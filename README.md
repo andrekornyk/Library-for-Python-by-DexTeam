@@ -21,6 +21,8 @@ Which Python provides by standard.
 
 ### Using ###
 
+To install the library, enter the following command at the command prompt (WIN+R > cmd):
+ pip install tensor-library
 
 Using the library is as simple and convenient as possible:
 
