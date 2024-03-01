@@ -1,65 +1,38 @@
-# Library for Python by DexTeam - Documentation
-
-# Library #
-
-## What is this? ##
-The module allows you to work with files in just one line of code, without the need to manually open and close the file each time
-
-## Quick Guide ##
-The module is based on the following structure:
-
-    
-    f = open('data.txt')
-    data = f.readlines()
-    f.close()
-    
-Which Python provides by standard.
+# Lullaby - Documentation
 
 
-----------
+================================================================
+Framework for extract data from vk.com (russian social network).
+================================================================
 
+This is a Python wrapper for Telegram Bot API.
 
-### Using ###
+Quickstart
+==========
 
-To install the library, enter the following command at the command prompt (WIN+R > cmd):
- pip install tensor-library
+Install
+-------
 
-Using the library is as simple and convenient as possible:
+.. code:: bash
 
-Let's import it first:
-First, import everything from the library (use the `from `...` import *` construct).
+    pip install lullaby
 
-Examples of all operations:
+Usage
+-----
 
-Writing the contents of an entire file to a variable using the `read()` function:
+.. code:: python
 
-    temp = File(path='test.txt').read()
+    >>> from lullaby import Lullaby
+    >>> from lullaby.long_polling import get_updates
+    >>>
+    >>> token = '123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11'
+    >>> lullaby_bot = Lullaby(token)
+    >>>
+    >>> print(lullaby_bot.getMe())
+    >>>
+    >>> def on_updates(updates):
+    ...    print(updates)
+    ...
+    >>> get_updates(lullaby_bot, on_updates, timeout=10)
 
-
-Writing the contents of an entire file to a variable line by line using the `readlines()` function:
-
-    temp = File(path='test.txt').readlines()
-
-
-Write only the first line from a file using the `readline()` function:
-
-    temp = File(path='test.txt').readline()
-
-
-Writing data from a variable to a file using write() (overwriting or creating a file):
-
-    temp = "Test data"
-    File(path='test.txt', data=temp).write()
-    
-
-Adding data from a variable to a file using write() (or creating a file):
-
-    temp = "Test data"
-    File(path='test.txt', data=temp).add()
-
-
-----------
-
-
-## Developer ##
-My discord server: soon... (I'm already doing it)
+See https://core.telegram.org/bots/api for detailed API guide.
